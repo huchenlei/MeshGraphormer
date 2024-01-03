@@ -5,7 +5,7 @@ Licensed under the MIT license.
 """
 
 import torch
-import src.modeling.data.config as cfg
+import graphormer.modeling.data.config as cfg
 
 class Graphormer_Hand_Network(torch.nn.Module):
     '''

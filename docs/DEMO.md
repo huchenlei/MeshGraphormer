@@ -16,7 +16,7 @@ Our codes require the input images that are already **cropped with the person ce
 
 
 ```bash
-python ./src/tools/run_gphmer_bodymesh_inference.py 
+python ./graphormer/tools/run_gphmer_bodymesh_inference.py 
        --resume_checkpoint ./models/graphormer_release/graphormer_3dpw_state_dict.bin 
        --image_file_or_path ./samples/human-body
 ```
@@ -31,7 +31,7 @@ This demo runs 3D hand reconstruction from a single image.
 You may want to provide the images that are already **cropped with the right-hand centered** in the image. The input images should have the size of `224x224`. Please place the images under `./samples/hand`, and run the following script.
 
 ```bash
-python ./src/tools/run_gphmer_handmesh_inference.py 
+python ./graphormer/tools/run_gphmer_handmesh_inference.py 
        --resume_checkpoint ./models/graphormer_release/graphormer_hand_state_dict.bin 
        --image_file_or_path ./samples/hand
 ```

@@ -44,10 +44,10 @@
 
     To run our code smoothly, please visit the following websites to download SMPL and MANO models. 
 
-    - Download `basicModel_neutral_lbs_10_207_0_v1.0.0.pkl` from [SMPLify](http://smplify.is.tue.mpg.de/), and place it at `${REPO_DIR}/src/modeling/data`.
-    - Download `MANO_RIGHT.pkl` from [MANO](https://mano.is.tue.mpg.de/), and place it at `${REPO_DIR}/src/modeling/data`.
+    - Download `basicModel_neutral_lbs_10_207_0_v1.0.0.pkl` from [SMPLify](http://smplify.is.tue.mpg.de/), and place it at `${REPO_DIR}/graphormer/modeling/data`.
+    - Download `MANO_RIGHT.pkl` from [MANO](https://mano.is.tue.mpg.de/), and place it at `${REPO_DIR}/graphormer/modeling/data`.
 
-    Please put the downloaded files under the `${REPO_DIR}/src/modeling/data` directory. The data structure should follow the hierarchy below. 
+    Please put the downloaded files under the `${REPO_DIR}/graphormer/modeling/data` directory. The data structure should follow the hierarchy below. 
     ```
     ${REPO_DIR}  
     |-- src  
@@ -62,7 +62,7 @@
     |-- ... 
     |-- ... 
     ```
-    Please check [/src/modeling/data/README.md](../src/modeling/data/README.md) for further details.
+    Please check [/graphormer/modeling/data/README.md](../graphormer/modeling/data/README.md) for further details.
 
 4. Download prediction files that were evaluated on FreiHAND Leaderboard.
 

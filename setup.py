@@ -34,7 +34,7 @@ def find_version(fname):
 
 setup(
     name="graphormer",
-    version=find_version("src/__init__.py"),
+    version=find_version("graphormer/__init__.py"),
     description="graphormer",
     long_description=readme('README.md'),
     packages=find_packages(),

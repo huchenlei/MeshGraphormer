@@ -8,7 +8,7 @@ import json
 import zipfile
 import torch
 import numpy as np
-from src.utils.metric_pampjpe import get_alignMesh
+from graphormer.utils.metric_pampjpe import get_alignMesh
 
 
 def load_pred_json(filepath):
@@ -97,7 +97,7 @@ def run_multiscale_inference(model_path, mode, output_dir):
         rotations = [0.0]
         scale = [1.0] 
 
-    job_cmd = "python ./src/tools/run_gphmer_handmesh.py " \
+    job_cmd = "python ./graphormer/tools/run_gphmer_handmesh.py " \
             "--val_yaml freihand_v3/test.yaml " \
             "--resume_checkpoint %s " \
             "--per_gpu_eval_batch_size 32 --run_eval_only --num_worker 2 " \

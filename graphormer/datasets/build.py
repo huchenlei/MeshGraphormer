@@ -9,9 +9,9 @@ import os.path as op
 import torch
 import logging
 import code
-from src.utils.comm import get_world_size
-from src.datasets.human_mesh_tsv import (MeshTSVDataset, MeshTSVYamlDataset)
-from src.datasets.hand_mesh_tsv import (HandMeshTSVDataset, HandMeshTSVYamlDataset)
+from graphormer.utils.comm import get_world_size
+from graphormer.datasets.human_mesh_tsv import (MeshTSVDataset, MeshTSVYamlDataset)
+from graphormer.datasets.hand_mesh_tsv import (HandMeshTSVDataset, HandMeshTSVYamlDataset)
 
 
 def build_dataset(yaml_file, args, is_train=True, scale_factor=1):
