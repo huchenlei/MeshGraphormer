@@ -1,1 +1,1 @@
-from transformers.pytorch_transformers.file_utils import *
+from pytorch_transformers.file_utils import *

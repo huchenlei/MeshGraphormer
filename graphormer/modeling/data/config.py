@@ -6,16 +6,16 @@ Adapted from opensource project GraphCMR (https://github.com/nkolot/GraphCMR/) a
 
 """
 
-from os.path import join
-folder_path = 'graphormer/modeling/'
-JOINT_REGRESSOR_TRAIN_EXTRA = folder_path + 'data/J_regressor_extra.npy'
-JOINT_REGRESSOR_H36M_correct = folder_path + 'data/J_regressor_h36m_correct.npy'
-SMPL_FILE = folder_path + 'data/basicModel_neutral_lbs_10_207_0_v1.0.0.pkl'
-SMPL_Male = folder_path + 'data/basicModel_m_lbs_10_207_0_v1.0.0.pkl'
-SMPL_Female = folder_path + 'data/basicModel_f_lbs_10_207_0_v1.0.0.pkl'
-SMPL_sampling_matrix = folder_path + 'data/mesh_downsampling.npz'
-MANO_FILE = folder_path + 'data/MANO_RIGHT.pkl'
-MANO_sampling_matrix = folder_path + 'data/mano_downsampling.npz'
+from pathlib import Path
+folder_path = Path(__file__).parent
+JOINT_REGRESSOR_TRAIN_EXTRA = folder_path / 'J_regressor_extra.npy'
+JOINT_REGRESSOR_H36M_correct = folder_path / 'J_regressor_h36m_correct.npy'
+SMPL_FILE = folder_path / 'basicModel_neutral_lbs_10_207_0_v1.0.0.pkl'
+SMPL_Male = folder_path / 'basicModel_m_lbs_10_207_0_v1.0.0.pkl'
+SMPL_Female = folder_path / 'basicModel_f_lbs_10_207_0_v1.0.0.pkl'
+SMPL_sampling_matrix = folder_path / 'mesh_downsampling.npz'
+MANO_FILE = folder_path / 'MANO_RIGHT.pkl'
+MANO_sampling_matrix = folder_path / 'mano_downsampling.npz'
 
 JOINTS_IDX = [8, 5, 29, 30, 4, 7, 21, 19, 17, 16, 18, 20, 31, 32, 33, 34, 35, 36, 37, 24, 26, 25, 28, 27]
 
