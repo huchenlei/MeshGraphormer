@@ -20,22 +20,22 @@ from torchvision.utils import make_grid
 import gc
 import numpy as np
 import cv2
-from src.modeling.bert import BertConfig, Graphormer
-from src.modeling.bert import Graphormer_Body_Network as Graphormer_Network
-from src.modeling._smpl import SMPL, Mesh
-from src.modeling.hrnet.hrnet_cls_net_gridfeat import get_cls_net_gridfeat
-from src.modeling.hrnet.config import config as hrnet_config
-from src.modeling.hrnet.config import update_config as hrnet_update_config
-import src.modeling.data.config as cfg
-from src.datasets.build import make_data_loader
+from graphormer.modeling.bert import BertConfig, Graphormer
+from graphormer.modeling.bert import Graphormer_Body_Network as Graphormer_Network
+from graphormer.modeling._smpl import SMPL, Mesh
+from graphormer.modeling.hrnet.hrnet_cls_net_gridfeat import get_cls_net_gridfeat
+from graphormer.modeling.hrnet.config import config as hrnet_config
+from graphormer.modeling.hrnet.config import update_config as hrnet_update_config
+import graphormer.modeling.data.config as cfg
+from graphormer.datasets.build import make_data_loader
 
-from src.utils.logger import setup_logger
-from src.utils.comm import synchronize, is_main_process, get_rank, get_world_size, all_gather
-from src.utils.miscellaneous import mkdir, set_seed
-from src.utils.metric_logger import AverageMeter, EvalMetricsLogger
-from src.utils.renderer import Renderer, visualize_reconstruction, visualize_reconstruction_test
-from src.utils.metric_pampjpe import reconstruction_error
-from src.utils.geometric_layers import orthographic_projection
+from graphormer.utils.logger import setup_logger
+from graphormer.utils.comm import synchronize, is_main_process, get_rank, get_world_size, all_gather
+from graphormer.utils.miscellaneous import mkdir, set_seed
+from graphormer.utils.metric_logger import AverageMeter, EvalMetricsLogger
+from graphormer.utils.renderer import Renderer, visualize_reconstruction, visualize_reconstruction_test
+from graphormer.utils.metric_pampjpe import reconstruction_error
+from graphormer.utils.geometric_layers import orthographic_projection
 
 from azureml.core.run import Run
 aml_run = Run.get_context()

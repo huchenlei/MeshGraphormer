@@ -14,8 +14,8 @@ import base64
 import cv2
 from tqdm import tqdm
 import yaml
-from src.utils.miscellaneous import mkdir
-from src.utils.tsv_file import TSVFile
+from graphormer.utils.miscellaneous import mkdir
+from graphormer.utils.tsv_file import TSVFile
 
 
 def img_from_base64(imagestring):

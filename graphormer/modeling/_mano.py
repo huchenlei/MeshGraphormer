@@ -16,7 +16,7 @@ import json
 import code
 from manopth.manolayer import ManoLayer
 import scipy.sparse
-import src.modeling.data.config as cfg
+import graphormer.modeling.data.config as cfg
 
 class MANO(nn.Module):
     def __init__(self):
