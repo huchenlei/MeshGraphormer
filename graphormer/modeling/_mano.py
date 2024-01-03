@@ -11,18 +11,18 @@ from __future__ import division
 import numpy as np
 import torch
 import torch.nn as nn
-import os.path as osp
 import json
 import code
 from manopth.manolayer import ManoLayer
 import scipy.sparse
 import graphormer.modeling.data.config as cfg
+from pathlib import Path
 
 class MANO(nn.Module):
     def __init__(self):
         super(MANO, self).__init__()
 
-        self.mano_dir = 'src/modeling/data'
+        self.mano_dir = Path(__file__).parent / 'data'
         self.layer = self.get_layer()
         self.vertex_num = 778
         self.face = self.layer.th_faces.numpy()
@@ -46,7 +46,7 @@ class MANO(nn.Module):
         self.register_buffer('joint_regressor_torch', joint_regressor_torch)
 
     def get_layer(self):
-        return ManoLayer(mano_root=osp.join(self.mano_dir), flat_hand_mean=False, use_pca=False) # load right hand MANO model
+        return ManoLayer(mano_root=self.mano_dir, flat_hand_mean=False, use_pca=False) # load right hand MANO model
 
     def get_3d_joints(self, vertices):
         """

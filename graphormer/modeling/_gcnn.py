@@ -4,6 +4,7 @@ import torch.nn.functional as F
 import numpy as np
 import scipy.sparse
 import math
+from pathlib import Path
 
 class SparseMM(torch.autograd.Function):
     """Redefine sparse @ dense matrix multiplication to enable backpropagation.
@@ -128,14 +129,15 @@ class GraphConvolution(torch.nn.Module):
         self.in_features = in_features
         self.out_features = out_features
 
+        data_dir = Path(__file__).parent / "data"
         if mesh=='body':
-            adj_indices = torch.load('./graphormer/modeling/data/smpl_431_adjmat_indices.pt')
-            adj_mat_value = torch.load('./graphormer/modeling/data/smpl_431_adjmat_values.pt')
-            adj_mat_size = torch.load('./graphormer/modeling/data/smpl_431_adjmat_size.pt')
+            adj_indices = torch.load(data_dir / 'smpl_431_adjmat_indices.pt')
+            adj_mat_value = torch.load(data_dir / 'smpl_431_adjmat_values.pt')
+            adj_mat_size = torch.load(data_dir / 'smpl_431_adjmat_size.pt')
         elif mesh=='hand':
-            adj_indices = torch.load('./graphormer/modeling/data/mano_195_adjmat_indices.pt')
-            adj_mat_value = torch.load('./graphormer/modeling/data/mano_195_adjmat_values.pt')
-            adj_mat_size = torch.load('./graphormer/modeling/data/mano_195_adjmat_size.pt')
+            adj_indices = torch.load(data_dir / 'mano_195_adjmat_indices.pt')
+            adj_mat_value = torch.load(data_dir / 'mano_195_adjmat_values.pt')
+            adj_mat_size = torch.load(data_dir / 'mano_195_adjmat_size.pt')
 
         self.adjmat = torch.sparse_coo_tensor(adj_indices, adj_mat_value, size=adj_mat_size).to(device)
 
